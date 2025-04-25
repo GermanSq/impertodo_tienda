@@ -1,0 +1,50 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img"
+public_folder: "/img"
+
+collections:
+  - name: "inicio"
+    label: "Inicio"
+    files:
+      - label: "Sección Bienvenida"
+        name: "bienvenida"
+        file: "content/inicio/bienvenida.md"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Texto", name: "texto", widget: "text" }
+          - { label: "Imagen", name: "imagen", widget: "image" }
+
+  - name: "servicios"
+    label: "Servicios"
+    folder: "content/servicios"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+
+  - name: "productos"
+    label: "Productos"
+    folder: "content/productos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - { label: "Categoría", name: "categoria", widget: "string" }
+      - { label: "Marca", name: "marca", widget: "string" }
+      - { label: "Imagen", name: "imagen", widget: "image" }
+
+  - name: "contacto"
+    label: "Contacto"
+    files:
+      - label: "Datos de contacto"
+        name: "datos"
+        file: "content/contacto/info.md"
+        fields:
+          - { label: "Teléfono", name: "telefono", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+          - { label: "Dirección", name: "direccion", widget: "string" }
+          - { label: "Redes Sociales", name: "redes", widget: "list", field: { label: "Link", name: "url", widget: "string" } }
